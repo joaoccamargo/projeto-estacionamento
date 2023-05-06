@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "FrontEnd estacionamento new dev",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --file . --host --port 5000 --startPath index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
