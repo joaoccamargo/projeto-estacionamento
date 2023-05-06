@@ -1,4 +1,4 @@
-import { openDatabase } from "../database.js";
+import { openDatabase } from "../config/database.js";
 
 export const listActivities = async (request, response) => {
     const db = await openDatabase();
