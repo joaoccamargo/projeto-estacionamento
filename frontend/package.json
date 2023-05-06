@@ -4,7 +4,7 @@
   "description": "FrontEnd estacionamento new dev",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server --file . --host --port 5000 --startPath index.html"
+    "echo": " test "
   },
   "author": "",
   "license": "ISC"
