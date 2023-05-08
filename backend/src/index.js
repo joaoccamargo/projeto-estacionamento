@@ -10,6 +10,14 @@ import { activityCheckin,
 
 const app = express()
 
+
+
+app.use((request, response) => {
+    response.header("Access-Control-Allow-Origin", "*"); // Liberação geral para fins educativos
+    response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    response.header("Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization")
+})
+
 app.use(express.json());
 
 app.get('/api/ping', (request, response) => {
