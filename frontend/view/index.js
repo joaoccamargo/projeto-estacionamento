@@ -78,8 +78,37 @@ const getAtualizaHtml = () => {
         </form>`
     main.innerHTML = dadosHtml
 }
+
+const getCheckinHtml = () => {
+    const main = document.getElementById('root')
+    const dadosHtml = ` 
+    <section>
+        <h2>Lista de Clientes no Estacionamento</h2>
+            <br>
+            <table id="tbody" class="table">
+                <tr>
+                    <th>Modelo</th>
+                    <th>Placa</th>
+                    <th>Opção</th>
+                </tr>
+            </table>
+            <div>
+                <label>Placa</label>
+                <select class="input" id="select"></select>
+                <a type="button" id="adicionar-novo">Adicionar Novo</a>
+                <br>
+                <div class="btn">
+                    <button id="checkin" class="btn-link">Checkin</button>
+                </div>
+            </div>
+    </section>
+    `
+    main.innerHTML = dadosHtml
+}
+
 export const view = {
     getCadastro,
     getListaClientesHtml,
-    getAtualizaHtml
+    getAtualizaHtml,
+    getCheckinHtml
 }
