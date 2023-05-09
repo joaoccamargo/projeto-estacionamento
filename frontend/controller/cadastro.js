@@ -9,7 +9,7 @@ formulario.addEventListener('submit', function(event){
         model: document.getElementById('modelo').value,
         type: document.getElementById('tipo').value,
         label: document.getElementById('placa').value,
-        observation: document.getElementById('observacao')
+        observation: document.getElementById('observacoes').value
     }
 
     postVeiculo(cadastroCliente)
