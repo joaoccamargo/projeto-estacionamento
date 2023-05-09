@@ -48,7 +48,38 @@ const getListaClientesHtml = () => {
     main.innerHTML = dadosHtml
 }
 
+const getAtualizaHtml = () => {
+    const main = document.getElementById('root')
+    const dadosHtml = ` 
+        <form id="formulario">
+            <h1>Editar Cliente</h1>
+            <label>Nome do Cliente</label>
+            <input id="name" type="text" placeholder="Digite o nome do cliente">
+            <br><br>
+            <label>Modelo</label>
+            <input id="modelo" type="text" placeholder="Digite o modelo do veiculo">
+            <br><br>
+            <label>Tipo</label>
+            <select id="tipo" type="text">
+                <option value="1">Carro</option>
+                <option value="0">Moto</option>
+            </select>
+            <br><br>
+            <label>Placa</label>
+            <input id="placa" type="text" placeholder="Digite a placa do veiculo">
+            <br><br>
+            <label>Observações</label>
+            <input id="observacoes" type="text" placeholder="Digite a observação">
+            <br><br>
+            <div>
+                <button id="cancelar" type="reset">Cancelar</button>
+                <button id="salvar" type="submit">Atualizar</button>
+            </div>
+        </form>`
+    main.innerHTML = dadosHtml
+}
 export const view = {
     getCadastro,
-    getListaClientesHtml
+    getListaClientesHtml,
+    getAtualizaHtml
 }

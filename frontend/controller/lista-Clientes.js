@@ -1,5 +1,6 @@
 import { view } from "../view/index.js";
 import { service } from "../service/index.js"
+import { AtualizaComponent } from "./atualiza.js";
 
 export const ListaClienteComponent = () => {
     view.getListaClientesHtml();
@@ -15,8 +16,10 @@ export const ListaClienteComponent = () => {
     const table = document.getElementById('tbody')
     table.addEventListener('click', (event) => {
         const button = event.target.innerText
+        const id = event.target.id
+
         if(button === "Editar"){
-            console.log("É igual editar")
+            AtualizaComponent(id);
         }
         if(button === "Excluir"){
            console.log("É igual excluir") 
@@ -29,6 +32,7 @@ export const ListaClienteComponent = () => {
 const criarNovaLinha = (cliente, modelo, placa, tipo, observacoes, id) => {
     const table = document.getElementById('tbody')
     const NovaLinha = document.createElement('tr')
+    
     const dadosHtml = `
     <td class="none">${cliente}</td>
     <td>${modelo}</td>
