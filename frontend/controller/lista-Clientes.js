@@ -22,7 +22,7 @@ export const ListaClienteComponent = () => {
             AtualizaComponent(id);
         }
         if(button === "Excluir"){
-           console.log("É igual excluir") 
+           deletar(id);
         }
     })
     
@@ -50,3 +50,8 @@ const criarNovaLinha = (cliente, modelo, placa, tipo, observacoes, id) => {
     return table.appendChild(NovaLinha)
 }
 
+export const deletar = (id) => {
+    service.deletaVeiculo(id).then((() => {
+        ListaClienteComponent();
+    }))
+}
