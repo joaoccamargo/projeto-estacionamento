@@ -31,7 +31,28 @@ const getVeiculo = () => {
     })
 }
 
+// -----------------PUT-----------------------
+const putVeiculo = (objetoCliente, id) => {
+    //console.log("objetoCliente: ", JSON.stringify(objetoCliente))
+    return fetch(`${url}/vehicles/${id}` , {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(objetoCliente)
+    }).then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor: ${response.status}`)
+        }else{
+            return response.json()
+        }
+    })
+}
+
+
+// EXPORT
 export const service = {
     postVeiculo,
-    getVeiculo
+    getVeiculo,
+    putVeiculo
 }
