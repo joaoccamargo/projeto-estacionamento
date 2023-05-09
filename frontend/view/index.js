@@ -34,16 +34,16 @@ const getListaClientesHtml = () => {
     const dadosHtml = ` 
             <section>
             <h1>Lista de Clientes</h1>
-            <table>
-                <tr>
-                    <th>Cliente</th>
-                    <th>Modelo</th>
-                    <th>Placa</th>
-                    <th>Tipo</th>
-                    <th>Observações</th>
-                    <th><a href="">Novo</a></th>
-                </tr>
-            </table>
+                <table id="tbody">
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Tipo</th>
+                        <th>Observações</th>
+                        <th><a href="">Novo</a></th>
+                    </tr>
+                </table>
             </section>`
     main.innerHTML = dadosHtml
 }
