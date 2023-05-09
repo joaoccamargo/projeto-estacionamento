@@ -12,10 +12,11 @@ const app = express()
 
 
 
-app.use((request, response) => {
+app.use((request, response, next) => {
     response.header("Access-Control-Allow-Origin", "*"); // Liberação geral para fins educativos
     response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-    response.header("Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization")
+    response.header("Access-Control-Allow-Headers", "X-PINGOTHER, Content-Type, Authorization");
+    next();
 })
 
 app.use(express.json());
