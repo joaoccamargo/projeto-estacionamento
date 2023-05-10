@@ -18,6 +18,21 @@ const postVeiculo = (objetoCliente) => {
     })
 }
 
+const postCheckin = (label) => {
+    return fetch(url + "/activities/checkin", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({label})
+    }).then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor: ${response.status}`)
+        }else{
+            return response.json()
+        }
+    })
+}
 // -----------------GET-----------------------
 const getVeiculo = () => {
     return fetch(url + "/vehicles")
@@ -77,5 +92,6 @@ export const service = {
     getVeiculo,
     putVeiculo,
     deletaVeiculo,
-    getActivities
+    getActivities,
+    postCheckin
 }
