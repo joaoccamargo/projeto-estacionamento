@@ -106,9 +106,38 @@ const getCheckinHtml = () => {
     main.innerHTML = dadosHtml
 }
 
+const getCheckoutHtml = () => {
+    const main = document.getElementById('root')
+    const dadosHtml = `
+        <section class="container">
+        <h2>Dados do cliente</h2>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>Cliente</th>
+                    <th>Modelo</th>
+                    <th>Placa</th>
+                </tr>
+                <tr id="tbody"></tr>
+            </table>
+            <div>
+                <label>Total de Horas</label>
+                <input
+                    id="totalHora"
+                    class="input"
+                    type="text"
+                    placeholder="Total de Horas"
+                    disabled 
+            </div>
+        </section>
+    `
+    main.innerHTML = dadosHtml
+}
+
 export const view = {
     getCadastroHtml,
     getListaClientesHtml,
     getAtualizaHtml,
-    getCheckinHtml
+    getCheckinHtml,
+    getCheckoutHtml
 }
