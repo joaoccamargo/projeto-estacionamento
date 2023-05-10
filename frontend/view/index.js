@@ -1,4 +1,4 @@
-const getCadastro = () => {
+const getCadastroHtml = () => {
     const main = document.getElementById('root')
     const dadosHtml = ` 
         <form id="formulario">
@@ -107,7 +107,7 @@ const getCheckinHtml = () => {
 }
 
 export const view = {
-    getCadastro,
+    getCadastroHtml,
     getListaClientesHtml,
     getAtualizaHtml,
     getCheckinHtml

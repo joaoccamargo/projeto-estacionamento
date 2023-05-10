@@ -3,6 +3,16 @@ import { view } from "../view/index.js";
 import { ListaClienteComponent } from "./lista-Clientes.js";
 
 export const AtualizaComponent = (idParametro) => {
+
+    const label = []
+    service.getVeiculo().then((dados) => {
+        dados.forEach(element => {
+            if(element.label !== null){
+                label.push(element.label)
+            }
+        });
+    })
+
     view.getAtualizaHtml();
 
     service.getVeiculo().then((dados) => {
@@ -24,11 +34,18 @@ export const AtualizaComponent = (idParametro) => {
             label: document.getElementById('placa').value,
             observation: document.getElementById('observacoes').value
         }
-        // Revisão Futura
-        service.putVeiculo(atualizaCliente, idParametro).then(() => {
-            cancelar();
-            ListaClienteComponent();
-        })
+
+        if(label.includes(atualizaCliente.label)){
+            return alert(`A placa: ${atualizaCliente.label} já existe no banco de dados`)
+        }else {
+            // Revisão Futura
+            service.putVeiculo(atualizaCliente, idParametro).then(() => {
+                cancelar();
+                ListaClienteComponent();
+            })
+        }
+
+       
 
      })
 }

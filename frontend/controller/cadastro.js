@@ -2,7 +2,17 @@ import { service } from "../service/index.js"
 import { view } from "../view/index.js"
 
 export const CadastroComponent = () => {
-    view.getCadastro();
+
+    const label = []
+    service.getVeiculo().then((dados) => {
+        dados.forEach(element => {
+            if(element.label !== null){
+                label.push(element.label)
+            }
+        });
+    })
+
+    view.getCadastroHtml();
 
     const formulario = document.getElementById('formulario')
     formulario.addEventListener('submit', function(event){
@@ -16,6 +26,10 @@ export const CadastroComponent = () => {
             observation: document.getElementById('observacoes').value
         }
 
-        service.postVeiculo(cadastroCliente)
+        if(label.includes(cadastroCliente.label)){
+            return alert(`A placa: ${cadastroCliente.label} já existe no banco de dados`)
+        }else {
+            service.postVeiculo(cadastroCliente)
+        }
      })
 }
