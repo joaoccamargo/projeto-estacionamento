@@ -84,6 +84,8 @@ const calculaHora = (tempoEmMilissegundos) => {
   return tempo;
 };
 
-const checkoutAPI = () => {
-    
+const checkoutAPI = (objeto) => {
+    service.putCheckout(objeto).then(() => {
+        window.location.href = "./checkin.html"
+    })
 }

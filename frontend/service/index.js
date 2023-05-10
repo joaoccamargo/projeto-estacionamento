@@ -73,6 +73,22 @@ const putVeiculo = (objetoCliente, id) => {
         }
     })
 }
+
+const putCheckout = (objeto) => {
+    return fetch(url + "/activities/checkout", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(objeto)
+    }).then((response) => {
+        if(response.status != 200){
+            console.log(`Erro no servidor: ${response.status}`)
+        }else{
+            return response.json()
+        }
+    })
+}
 // -----------------DELETE-----------------------
 const deletaVeiculo = (id) => {
     return fetch(`${url}/vehicles/${id}` , {
@@ -93,5 +109,6 @@ export const service = {
     putVeiculo,
     deletaVeiculo,
     getActivities,
-    postCheckin
+    postCheckin,
+    putCheckout
 }
