@@ -127,7 +127,19 @@ const getCheckoutHtml = () => {
                     class="input"
                     type="text"
                     placeholder="Total de Horas"
-                    disabled 
+                    disabled />
+                <br>
+                <br>
+                <label>Valor a pagar</label>
+                <input
+                    id="totalAPagar"
+                    class="input"
+                    type="text"
+                    placeholder="Valor a pagar"
+                    disabled />
+                <br>
+                <br>
+                <button class="btn-link" id="finalizar">Finalizar</button>
             </div>
         </section>
     `
