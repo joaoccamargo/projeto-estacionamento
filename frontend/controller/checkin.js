@@ -1,5 +1,6 @@
 import { service } from "../service/index.js";
 import { view } from "../view/index.js"
+import { CadastroComponent } from "./cadastro.js";
 
 view.getCheckinHtml();
 
@@ -63,7 +64,7 @@ const criarAsOpcoes = (arrayVeiculos) => {
 const main = document.getElementById('root')
 
 main.addEventListener('click', (event) => {
-    event.preventDefault()
+    //event.preventDefault()
     const button = event.target.innerText
     const id = event.target.id
 
@@ -75,7 +76,7 @@ main.addEventListener('click', (event) => {
         searchID(select.value)
     }
     if(button === "Adicionar Novo"){
-        console.log(button)
+        CadastroComponent();
     }
 })
 
