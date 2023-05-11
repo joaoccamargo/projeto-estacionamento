@@ -1,6 +1,7 @@
 import { service } from "../service/index.js";
 import { view } from "../view/index.js";
 import { ListaClienteComponent } from "./lista-Clientes.js";
+import { CadastroComponent } from "./cadastro.js";
 
 export const AtualizaComponent = (idParametro) => {
 
@@ -44,11 +45,19 @@ export const AtualizaComponent = (idParametro) => {
                 ListaClienteComponent();
             })
         }
-
-       
-
+        
      })
 }
+
+const main = document.getElementById('root')
+
+main.addEventListener('click', (event) => {
+    //event.preventDefault()
+    const button = event.target.innerText
+    if(button === "Novo"){
+        CadastroComponent();
+    }
+})
 
 const adicionaParametroNoInput = (objeto) => {
         document.getElementById('name').value = objeto.owner

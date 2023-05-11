@@ -45,6 +45,8 @@ footer {
 @media (min-width: 1024px) {
     footer {
         height: 100%;
+        width: 100%;
+        position: absolute;
     }
     .footer {
         margin-bottom: 3vw;

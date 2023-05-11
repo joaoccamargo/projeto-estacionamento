@@ -4,11 +4,6 @@ import { ListaClienteComponent } from "./controller/lista-Clientes.js";
 
 import { view } from "./view/index.js";
 
-view.getSpinner()
-    setTimeout(() => {
-        view.getIndex();
-    }, 600)
-
 const link = document.getElementById('link')
 
 link.addEventListener('click', (event) => {

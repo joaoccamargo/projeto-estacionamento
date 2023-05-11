@@ -59,7 +59,7 @@ const getListaClientesHtml = () => {
                 <th>Placa</th>
                 <th class="none">Tipo</th>
                 <th class="none">Observações</th>
-                <th><a>Novo</a></th>
+                <th><a type="button" id="adicionar-novo" class="checkin__item__link">Novo</a></th>
             </tr>
             </table>
         </section> `
