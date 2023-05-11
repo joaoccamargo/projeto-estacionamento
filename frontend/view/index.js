@@ -9,17 +9,6 @@ const getIndex = () => {
     main.innerHTML = dadosHtml
 }
 
-const getSpinner = () => {
-    const main = document.getElementById('root')
-    const dadosHtml = `
-    <section class="container">
-        <div id="spinner"></div>
-    </section>
-      `
-    main.innerHTML = dadosHtml
-
-}
-
 const getCadastroHtml = () => {
     const main = document.getElementById('root')
     const dadosHtml = `
@@ -185,7 +174,6 @@ const getFaturamentoHtml = () => {
 }
 export const view = {
     getIndex,
-    getSpinner,
     getListaClientesHtml,
     getCadastroHtml,
     getAtualizaHtml,
