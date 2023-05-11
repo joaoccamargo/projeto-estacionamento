@@ -3,7 +3,7 @@ const getIndex = () => {
     const dadosHtml = `
       <section class="index">
         <h1 class="index__item">Bem vindo ao modulo 3 newDev() Traco!</h1>
-        <a class="index__link" href="../checkin.html"><img src="../assets/img/traco-principal.png" /></a>
+        <a class="index__link" href="../checkin.html"><img src="./assets/img/traco-principal.png" /></a>
       </section>
       `
     main.innerHTML = dadosHtml
